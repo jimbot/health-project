@@ -1,3 +1,5 @@
+<% include ./partials/header %>
+
 <h2><%=category.title%></h2>
 
 <a href="/<%=category._id%>/new">Add Post</a>
@@ -6,11 +8,40 @@
 
 <h3>Posts</h3>
 
-<% category.posts.forEach(function(post){ %>
-  <div style="border: 1px solid blue">
-    <h4>
-      <%=post.title%>
-    </h4>
-    <p><%=post.body%></p>
+<% category.posts.reverse().forEach(function(post){ %>
+  <div class="ui card container">
+    <div class="content">
+      <div class="header">
+        <a class="ui header">
+          <%=post.title%>
+        </a>
+      </div>
+      <div class="description">
+        <p><%=post.body%></p>
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="left floated">
+        <a class="ui label" href="">
+          <%= post.author.username %>
+        </a>
+        <a href="">
+          <div class="ui label">
+            <i class="comment icon"></i>
+            <% if(project.comments.length > 0){ %>
+              <%= project.comments.length %>
+            <% } %>
+          </div>
+        </a>
+      </span>
+      <span class="date">
+        <%= moment(post.created).fromNow() %>
+      </span>
+    </div>
+
+
+
   </div>
 <% }) %>
+
+<% include ./partials/footer %>
