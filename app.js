@@ -65,7 +65,9 @@ var Category = mongoose.model("Category", categorySchema);
 var postSchema = new mongoose.Schema({
   title: String,
   body: String,
-  create: {type: Date, default: Date.now},
+  created: {
+    type: Date, default: Date.now
+  },
   comments: [
     {
       type: mongoose.Schema.Types.ObjectId,
