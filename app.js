@@ -41,6 +41,12 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 passport.use(new LocalStrategy(User.authenticate()));
 
+// GET CURRENT USER
+app.use(function(req, res, next){
+  res.locals.currentUser = req.user;
+  next();
+});
+
 // CATEGORY SCHEMA
 var categorySchema = new mongoose.Schema({
   title: String,
@@ -197,10 +203,12 @@ app.get("/login", function(req, res){
   res.render("login");
 });
 
-// GET CURRENT USER
-app.use(function(req, res, next){
-  res.locals.currentUser = req.user;
-  next();
+// login logic
+// middleware
+app.post("/login", passport.authenticate("local", {
+  successRedirect: "/",
+  failtureRedirect: "/login"
+}), function(req, res){
 });
 
 // LISTENERS
