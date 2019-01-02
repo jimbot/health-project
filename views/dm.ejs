@@ -18,7 +18,7 @@
     </form>
 </div>
 
-<%
+<script>
 $("#enter_button").click(function(event){
       event.preventDefault();
       var submission = $("#submit_text").val()
@@ -27,7 +27,6 @@ $("#enter_button").click(function(event){
         $("#content").prepend(newItem);
       }
 });
-%>
+</script>
 
-<script>http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js</script>
 <% include ./partials/footer %>

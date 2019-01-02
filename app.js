@@ -161,8 +161,8 @@ app.post("/home/:id", function(req, res){
         if(err){
           console.log(err);
         } else {
-          // post.author.id = req.user._id;
-          // post.author.username = req.user.username;
+          post.author.id = req.user._id;
+          post.author.username = req.user.username;
           post.save();
           category.posts.push(post);
           category.save();
@@ -209,6 +209,11 @@ app.post("/login", passport.authenticate("local", {
   successRedirect: "/",
   failtureRedirect: "/login"
 }), function(req, res){
+});
+
+// DM
+app.get("/dm", function(req, res){
+  res.render("dm");
 });
 
 // LISTENERS
