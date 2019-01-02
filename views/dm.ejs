@@ -1,0 +1,33 @@
+<% include ./partials/header %>
+
+<ul>
+  <li><a href="/login">Login</a></li>
+  <li><a href="/register">Signup</a></li>
+</ul>
+
+<div id="content">
+    <div class="msg">
+      <p class="authorName">Wellness Coordinator</p>
+      <p class="timestamp">December 29</p>
+      <p class="words">Thanks so much</p>
+    </div>
+    <form>
+        <textarea id="submit_text"></textarea>
+        <button id="enter_button">Enter</button>
+      </form>
+    </form>
+</div>
+
+<%
+$("#enter_button").click(function(event){
+      event.preventDefault();
+      var submission = $("#submit_text").val()
+      if(!submission == "" || !("#submit_text").val() == "Text goes here") {
+        var newItem = $("<div><p class='authorName'>" + "!!Username Here!!" + "</p><p class='timestamp'>" + Date.now() + "</p><p class='words'>" + submission + "</p></div>").addClass("msg");
+        $("#content").prepend(newItem);
+      }
+});
+%>
+
+<script>http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js</script>
+<% include ./partials/footer %>
