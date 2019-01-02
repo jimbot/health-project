@@ -1,0 +1,25 @@
+body {
+  background-color: rgb(246,247,248)!important;
+}
+
+.ui.header {
+  text-align: center;
+}
+
+div.ui.card.container {
+  width: 500px;
+  border: none!important;
+  margin-bottom: 25px;
+  padding: 10px;
+}
+
+div.ui.main.text.container.segment.log_reg_box {
+  width: 500px;
+  padding: 20px;
+  border: none!important;
+}
+
+div.ui.primary.menu {
+  margin-bottom: 30px;
+  padding: 10px;
+}

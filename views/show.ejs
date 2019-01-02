@@ -1,12 +1,49 @@
-<% include ./partials/header %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-<h2><%=category.title%></h2>
+<head>
+  <meta charset="utf-8">
+  <title>BCIT US</title>
+  <link rel="stylesheet" type="text/css" href="/app.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
+</head>
 
-<a href="/<%=category._id%>/new">Add Post</a>
-<br/>
-<a href="/">back</a>
 
-<h3>Posts</h3>
+  <div class="ui primary menu">
+    <div class="ui container">
+
+
+      <div class="left menu">
+        <div class="ui secondary menu">
+          <a class="item" href="/">BCIT US</a>
+        </div>
+      </div>
+
+      <div class="right menu">
+        <div class="ui secondary menu">
+          <% if(!currentUser){ %>
+          <a class="ui item" href="/register">Signup</a>
+          <a class="ui item" href="/login">Login</a>
+          <% } else { %>
+          <a class="ui item" href="/<%=category._id%>/new">
+            <i class="edit icon" style="font-size:1em;"></i>Post
+          </a>
+          <a class="ui item" href="/projects/new">
+            <i class="inbox icon" style="font-size:1em;"></i>Inbox
+          </a>
+          <a class="ui item" href="/profile/<%=currentUser._id%>">
+            <%= currentUser.firstName %></a>
+          <a class="ui item" href="/logout">Logout</a>
+          <% } %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<h1 class="ui header"><%=category.title%></h1>
 
 <% category.posts.reverse().forEach(function(post){ %>
   <div class="ui card container">
@@ -34,7 +71,7 @@
           </div>
         </a>
       </span>
-      <span class="date">
+      <span class="right floated date">
         <%= moment(post.created).fromNow() %>
       </span>
     </div>
