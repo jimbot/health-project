@@ -1,1 +1,11 @@
 <h1>Discover</h1>
+
+<% categories.forEach(function(category){ %>
+  <div style="border: 1px solid blue">
+    <h4>
+      <a href="/home/<%=category._id%>"><%=category.title%></a>
+    </h4>
+    <img src="<%=category.image%>" alt="" style="width: 400px">
+    <p><%=category.members%> members</p>
+  </div>
+<% }) %>
