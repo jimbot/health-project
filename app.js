@@ -106,12 +106,19 @@ app.post("/home", function(req, res){
 
 // SHOW ROUTE
 app.get("/home/:id", function(req, res){
-  Category.findById(req.params.id, function(err, currCategory){
+  Category.findById(req.params.id).populate("comments").exec(function(err, currCategory){
     if(err){
       res.redirect("/home");
     } else {
       res.render("show", {category: currCategory});
     }
+  });
+});
+
+// ROUTES FOR CREATING A POST WITHIN A CATEGORY
+app.get("/:id/new", function(req, res){
+  Category.findById(req.params.id, function(err, currCategory){
+    res.render("newPost", {category: currCategory});
   });
 });
 
