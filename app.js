@@ -106,7 +106,7 @@ app.post("/home", function(req, res){
 
 // SHOW ROUTE
 app.get("/home/:id", function(req, res){
-  Category.findById(req.params.id).populate("comments").exec(function(err, currCategory){
+  Category.findById(req.params.id).populate("posts").exec(function(err, currCategory){
     if(err){
       res.redirect("/home");
     } else {
@@ -119,6 +119,28 @@ app.get("/home/:id", function(req, res){
 app.get("/:id/new", function(req, res){
   Category.findById(req.params.id, function(err, currCategory){
     res.render("newPost", {category: currCategory});
+  });
+});
+
+// POST ROUTE
+app.post("/home/:id", function(req, res){
+  Category.findById(req.params.id, function(err, category){
+    if(err){
+      console.log(err);
+    } else {
+      Post.create(req.body.post, function(err, post){
+        if(err){
+          console.log(err);
+        } else {
+          // post.author.id = req.user._id;
+          // post.author.username = req.user.username;
+          post.save();
+          category.posts.push(post);
+          category.save();
+          res.redirect("/home/" + category._id);
+        }
+      });
+    }
   });
 });
 

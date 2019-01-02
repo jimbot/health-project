@@ -1,6 +1,6 @@
 <div>
   <h2>Create New Post for <%=category.title%></h2>
-  <form class="" action="/home" method="POST">
+  <form class="" action="/home/<%=category._id%>" method="POST">
     <input type="text" name="post[title]" placeholder="Title">
     <br/>
     <textarea name="post[body]" rows="8" cols="80" placeholder="Post Body"></textarea>

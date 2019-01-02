@@ -5,3 +5,12 @@
 <a href="/">back</a>
 
 <h3>Posts</h3>
+
+<% category.posts.forEach(function(post){ %>
+  <div style="border: 1px solid blue">
+    <h4>
+      <%=post.title%>
+    </h4>
+    <p><%=post.body%></p>
+  </div>
+<% }) %>
