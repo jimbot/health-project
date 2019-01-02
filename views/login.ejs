@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment log_reg_box">
+  <div class="ui form">
+    <h1 class="ui header">
+      Welcome back!
+    </h1>
+    <p id="welcome">Sign in with your account</p>
+    <form class="ui form" action="/login" method="POST">
+      <div class="field">
+        <input type="text" name="username" placeholder="Username or Email">
+      </div>
+      <div class="field">
+        <input type="password" id="password" value="" name="password" placeholder="Password">
+      </div>
+      <div class="field">
+        <p style="font-size: 10pt;"><a class="ui item" href="">Forgot your password?</a></p>
+      </div>
+      <button class="ui primary submit button">
+        Login
+      </button>
+    </form>
+  </div>
+  <br />
+  <div class="extra">
+    <p style="font-size: 10pt;">Don't have an account? <a class="ui item" href="/register">Sign up</a></p>
+  </div>
+</div>
+
+<% include ./partials/footer %>

@@ -1,13 +1,22 @@
 var express = require("express"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
+    methodOverride = require("method-override"),
+    // for authentication
+    passport = require("passport"),
+    LocalStrategy = require("passport-local"),
+    passportLocalMongoose = require("passport-local-mongoose"),
     methodOverride = require("method-override");
+
+    // FOR SCHEMAS
+    User = require("./models/user");
 var app = express();
 
 app.set("view engine", "ejs");
 // serve css files from public
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride('_method'));
 // MOMENT JS
 app.locals.moment = require('moment');
 
@@ -17,6 +26,20 @@ app.use(methodOverride("_method"));
 
 // Connect database
 mongoose.connect("mongodb://james:james1@ds147684.mlab.com:47684/health-app", {useNewUrlParser: true});
+
+// secret helps encode and decode the session for authentication
+app.use(require("express-session")({
+    secret: "mental health app for hackathon",
+    resave: false,
+    saveUninitialized: false
+}));
+// you need the below two lines when you want to use passport
+app.use(passport.initialize());
+app.use(passport.session());
+// using the serialize and deserialize as defined by passport
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
 
 // CATEGORY SCHEMA
 var categorySchema = new mongoose.Schema({
@@ -142,6 +165,42 @@ app.post("/home/:id", function(req, res){
       });
     }
   });
+});
+
+// AUTH ROUTES
+// show sign up form
+app.get("/register", function(req, res){
+  res.render("register");
+});
+
+// handling user sign up
+app.post("/register", function(req, res){
+  var newUser = new User({
+    username: req.body.username,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName
+  });
+  User.register(newUser, req.body.password, function(err, user){
+    if(err){
+      console.log(err);
+      return res.render("register");
+    }
+    passport.authenticate("local")(req, res, function(){
+      res.redirect("/");
+    });
+  });
+});
+
+// LOGIN ROUTES
+//render login form
+app.get("/login", function(req, res){
+  res.render("login");
+});
+
+// GET CURRENT USER
+app.use(function(req, res, next){
+  res.locals.currentUser = req.user;
+  next();
 });
 
 // LISTENERS

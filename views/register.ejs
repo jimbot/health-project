@@ -1,0 +1,43 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment log_reg_box">
+  <div class="ui form">
+    <h1 class="ui header">
+      Welcome!
+    </h1>
+    <p id="welcome">Create an account to start collaborating with people in your community</p>
+    <form action="/register" method="POST" class="ui form">
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="firstName" placeholder="First Name" min="2" max="10" required>
+          </div>
+          <div class="field">
+            <input type="text" name="lastName" placeholder="Last Name" min="2" max="10" required>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <input type="text" name="username" placeholder="Username or Email" min="4" max="10" required>
+      </div>
+      <div class="field">
+        <input type="password" name="password" placeholder="Password" min="6" required>
+      </div>
+      <div class="field">
+        <div class="ui checkbox">
+          <input type="checkbox" required>
+          <label>I agree to the Terms and Conditions</label>
+        </div>
+      </div>
+      <button class="ui primary submit button">
+        Create Account
+      </button>
+    </form>
+  </div>
+  <br />
+  <div class="extra">
+    <p style="font-size: 10pt;">Already have an account? <a class="ui item" href="/login">Login</a></p>
+  </div>
+</div>
+
+<% include ./partials/footer %>
