@@ -1,3 +1,5 @@
+<% include ./partials/header %>
+
 <div>
   <h2>Create New Post for <%=category.title%></h2>
   <form class="" action="/home/<%=category._id%>" method="POST">
@@ -8,3 +10,5 @@
     <input type="submit" name="submit" value="submit">
   </form>
 </div>
+
+<% include ./partials/footer %>
