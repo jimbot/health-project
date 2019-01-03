@@ -11,18 +11,25 @@
           <div style="position:relative;">
               <a><img class="card-img-top" src="<%=category.image%>"></a>
               <div class="card-body">
-                  <h4 style="position: absolute; top: 70%; left: 1.7em" class="card-title">
-                      <a href="/home/<%=category._id%>" style=" color: white; text-shadow: 2px 2px 5px black;;"><%=category.title%></a>
+                  <h4 style="position: absolute; top: 70%;" class="card-title">
+                      <a href="/home/<%=category._id%>" style=" color: white; text-shadow: 2px 2px 4px black; font-size:1.1em"><%=category.title%></a>
                   </h4>
-                  <p><%=category.members%> members</p>
+                  <div class="ui pink label" style="font-size:1.1em;margin: -18px">
+                    <i class="users icon"></i> <%=category.members%> members
+                  </div>
               </div>
           </div>
       </div>
     <% }) %>
   </div>
 </div>
+<br/>
+<div class="content" style="text-align:center; margin-top: 50px;">
+  <a href="#">load more experiences</a>
+</div>
 
-<footer class="page-footer font-small indigo" style="background-color: white; margin-top: 2em;">
+
+<footer class="page-footer font-small indigo" style="background-color: white; margin-top: 6em;">
 
     <!-- Footer Links -->
     <div class="container">
@@ -49,7 +56,7 @@
             <!-- Grid column -->
             <div class="col-md-2 mb-3">
                 <h6 class="text-uppercase font-weight-bold">
-                    <a href="#!">Learning Disabilities</a>
+                    <a href="#!">Disabilities</a>
                 </h6>
             </div>
             <!-- Grid column -->
@@ -79,10 +86,7 @@
 
             <!-- Grid column -->
             <div class="col-md-8 col-12 mt-5">
-                <p style="line-height: 1.7rem">PhotoLink is a company that connects photographers with people
-                    in need of photography. Currently there is no one stop shop for people to find
-                    photographers for their long lasting memories. This why our founders: Bal, Jihyo, and Josh
-                    decided to make PhotoLink.</p>
+                <p style="line-height: 1.7rem">UpLift is...</p>
             </div>
             <!-- Grid column -->
 

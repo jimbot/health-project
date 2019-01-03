@@ -79,7 +79,8 @@ var postSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
     },
-    username: String
+    username: String,
+    profilePicture: String
   }
 });
 var Post = mongoose.model("Post", postSchema);
@@ -96,7 +97,8 @@ var commentSchema = mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
     },
-    username: String
+    username: String,
+    profilePicture: String
   }
 });
 var Comment = mongoose.model("Comment", commentSchema);
@@ -164,6 +166,7 @@ app.post("/home/:id", function(req, res){
         } else {
           post.author.id = req.user._id;
           post.author.username = req.user.username;
+          post.author.profilePicture = req.user.profilePicture;
           post.save();
           category.posts.push(post);
           category.save();
@@ -182,10 +185,36 @@ app.get("/register", function(req, res){
 
 // handling user sign up
 app.post("/register", function(req, res){
+  var temp = [
+    "https://i.imgur.com/s11FC6a.jpg",
+    "https://i.imgur.com/yRL2B75.jpg",
+    "https://i.imgur.com/a8x9yNn.jpg",
+    "https://i.imgur.com/fbI8YX3.jpg",
+    "https://i.imgur.com/doWmlMF.jpg",
+    "https://i.imgur.com/jqQbMwv.jpg",
+    "https://i.imgur.com/9SV8l8J.jpg",
+    "https://i.imgur.com/E3IVuYR.jpg",
+    "https://i.imgur.com/p5LMaNO.jpg",
+    "https://i.imgur.com/LSxrKkC.jpg",
+    "https://i.imgur.com/ZsU18RH.jpg",
+    "https://i.imgur.com/jz62sV0.jpg",
+    "https://i.imgur.com/y0sVg20.jpg",
+    "https://i.imgur.com/3vdlodF.jpg",
+    "https://i.imgur.com/8Y9w8K8.jpg",
+    "https://i.imgur.com/diyedJ9.jpg",
+    "https://i.imgur.com/PZRZJ91.jpg",
+    "https://i.imgur.com/0IvBke6.jpg",
+    "https://i.imgur.com/IpKxyzP.jpg",
+    "https://i.imgur.com/P2un1WU.jpg",
+    "https://i.imgur.com/G1zStbw.jpg",
+    "https://i.imgur.com/sRUc4h2.jpg"
+  ];
+  var num = Math.floor((Math.random() * (temp.length - 1)));
   var newUser = new User({
     username: req.body.username,
     firstName: req.body.firstName,
-    lastName: req.body.lastName
+    lastName: req.body.lastName,
+    profilePicture: temp[num]
   });
   User.register(newUser, req.body.password, function(err, user){
     if(err){
@@ -241,6 +270,7 @@ app.post("/show/:id", function(req, res){
         } else {
           comment.author.id = req.user._id;
           comment.author.username = req.user.username;
+          comment.author.profilePicture = req.user.profilePicture;
           comment.save();
           post.comments.push(comment);
           post.save();

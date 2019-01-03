@@ -36,7 +36,9 @@
             <i class="users icon" style="font-size:1em;"></i>Counsellors
           </a>
           <a class="ui item" href="#">
-            <%= currentUser.username %></a>
+            <img class="ui right spaced avatar image" src="<%=currentUser.profilePicture%>">
+            <%= currentUser.username %>
+          </a>
           <a class="ui item" href="/logout">Logout</a>
           <% } %>
         </div>
@@ -62,7 +64,8 @@
     </div>
     <div class="extra content">
       <span class="left floated">
-        <a class="ui label" href="">
+        <a class="ui image label">
+          <img src="<%=post.author.profilePicture%>">
           <%= post.author.username %>
         </a>
         <a href="">

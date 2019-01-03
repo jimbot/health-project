@@ -13,7 +13,8 @@
   </div>
   <div class="extra content">
     <span class="left floated">
-      <a class="ui label" href="">
+      <a class="ui image label">
+        <img src="<%=post.author.profilePicture%>">
         <%= post.author.username %>
       </a>
       <a href="">
@@ -44,8 +45,11 @@
         <% post.comments.forEach(function(comment){ %>
         <div class="ui comments">
           <div class="comment">
+            <a class="avatar" href="/profile/<%=comment.author.id%>">
+              <img src="<%=comment.author.profilePicture%>">
+            </a>
             <div class="content">
-              <a class="author">
+              <a class="author" href="/profile/<%=comment.author.id%>">
                 <%= comment.author.username %></a>
               <div class="metadata date_commented">
                 <span class="date">

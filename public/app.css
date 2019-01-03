@@ -24,13 +24,6 @@ div.ui.primary.menu {
   padding: 10px;
 }
 
-<<<<<<< HEAD
-img.logo_img {
-  float: left;
-}
-=======
-ui.secondary
-
 /* GRID SYSTEM FOR HOME PAGE */
   @media (min-width: 992px) {
     body {
@@ -39,7 +32,6 @@ ui.secondary
   }
 
   .portfolio-item {
-    margin-bottom: 75px;
     height: 200px;
     width: 300px;
     margin-bottom: 125px;
