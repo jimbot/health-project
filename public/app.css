@@ -58,7 +58,7 @@ ui.secondary
   padding: 13px;
   display: flex;
   flex-direction: column;
-  max-height: 70vh;
+  max-height: 65vh;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .members-count,
@@ -100,32 +100,22 @@ ui.secondary
 .chat-popup {
     visibility: visible;
     position: fixed;
-    top: 10%;
+    top: 15%;
     right: 15px;
     border: 3px solid #f1f1f1;
     z-index: 9;
     }
 
 .open-button {
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 5%;
-    right: 14%;
-    width: 50px;
-    }
-
-.close-button {
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
     position: fixed;
     bottom: 5%;
     right: 10%;
-    width: 50px;
+    width: 150px;
+    }
+
+.close-button {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    width: 100px;
     }
