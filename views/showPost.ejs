@@ -1,0 +1,80 @@
+<% include ./partials/header %>
+
+<div class="ui card container">
+  <div class="content">
+    <div class="header">
+      <a class="ui header" href="/show/<%=post._id%>">
+        <%=post.title%>
+      </a>
+    </div>
+    <div class="description">
+      <p><%=post.body%></p>
+    </div>
+  </div>
+  <div class="extra content">
+    <span class="left floated">
+      <a class="ui label" href="">
+        <%= post.author.username %>
+      </a>
+      <a href="">
+        <div class="ui label">
+          <i class="comment icon"></i>
+          <% if(post.comments.length > 0){ %>
+            <%= post.comments.length %>
+          <% } %>
+        </div>
+      </a>
+    </span>
+    <span class="right floated date">
+      <%= moment(post.created).fromNow() %>
+    </span>
+  </div>
+</div>
+
+
+
+
+<div class="ui card container"  style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
+  <div class="content">
+    <div class="ui comments">
+      <h2 class="ui dividing header">Discussion</h2>
+      <br/>
+
+      <div class="content">
+        <% post.comments.forEach(function(comment){ %>
+        <div class="ui comments">
+          <div class="comment">
+            <div class="content">
+              <a class="author">
+                <%= comment.author.username %></a>
+              <div class="metadata date_commented">
+                <span class="date">
+                  <%= moment(comment.created).fromNow() %>
+                </span>
+              </div>
+              <div class="text">
+                <%= comment.text %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+
+      <br/>
+      <!-- The dicsussion text field -->
+      <div class="content">
+        <form action="/show/<%=post._id%>" method="POST" class="ui form">
+          <div class="field">
+            <textarea type="text" name="comment[text]" placeholder="Join the discussion" rows="2" style="resize: none;" required></textarea>
+          </div>
+          <button class="ui blue submit button">Post</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<% include ./partials/footer %>

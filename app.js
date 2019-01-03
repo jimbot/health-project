@@ -95,10 +95,9 @@ var commentSchema = mongoose.Schema({
     id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
-    }
-  },
-  username: String,
-  profilePicture: String
+    },
+    username: String
+  }
 });
 var Comment = mongoose.model("Comment", commentSchema);
 
@@ -211,6 +210,39 @@ app.post("/login", passport.authenticate("local", {
   successRedirect: "/",
   failtureRedirect: "/login"
 }), function(req, res){
+});
+
+// SHOW POST DETAIL
+app.get("/show/:id", function(req, res){
+  Post.findById(req.params.id).populate("comments").exec(function(err, post){
+    if(err){
+      res.redirect("/home");
+    } else {
+      res.render("showPost", {post: post});
+    }
+  });
+});
+
+// ADD COMMENT TO CURRENT POST
+app.post("/show/:id", function(req, res){
+  Post.findById(req.params.id, function(err, post){
+    if(err){
+      console.log(err);
+    } else {
+      Comment.create(req.body.comment, function(err, comment){
+        if(err){
+          console.log(err);
+        } else {
+          comment.author.id = req.user._id;
+          comment.author.username = req.user.username;
+          comment.save();
+          post.comments.push(comment);
+          post.save();
+          res.redirect("/show/" + post._id);
+        }
+      });
+    }
+  });
 });
 
 // DM
