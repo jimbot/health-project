@@ -24,6 +24,11 @@ div.ui.primary.menu {
   padding: 10px;
 }
 
+<<<<<<< HEAD
+img.logo_img {
+  float: left;
+}
+=======
 ui.secondary
 
 /* GRID SYSTEM FOR HOME PAGE */
@@ -119,3 +124,4 @@ ui.secondary
     right: 2%;
     width: 100px;
     }
+>>>>>>> 7a683bb9ee9862aa96b62b00cae04d4797d44504
