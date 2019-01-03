@@ -1,17 +1,104 @@
 <% include ./partials/header %>
 
-<h1>Discover</h1>
+<!-- Page Heading -->
+<h1 class="my-4" style="text-align: center;">Welcome to Uplift!
+</h1>
 
-<a href="/home/new">Create Category</a>
-
-<% categories.forEach(function(category){ %>
-  <div style="border: 1px solid blue">
-    <h4>
-      <a href="/home/<%=category._id%>"><%=category.title%></a>
-    </h4>
-    <img src="<%=category.image%>" alt="" style="width: 400px">
-    <p><%=category.members%> members</p>
+<div class="container">
+  <div class="row">
+    <% categories.forEach(function(category){ %>
+      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+          <div style="position:relative;">
+              <a><img class="card-img-top" src="<%=category.image%>"></a>
+              <div class="card-body">
+                  <h4 style="position: absolute; top: 70%; left: 1.7em" class="card-title">
+                      <a href="/home/<%=category._id%>" style=" color: white; text-shadow: 2px 2px 5px black;;"><%=category.title%></a>
+                  </h4>
+                  <p><%=category.members%> members</p>
+              </div>
+          </div>
+      </div>
+    <% }) %>
   </div>
-<% }) %>
+</div>
+
+<footer class="page-footer font-small indigo" style="background-color: white; margin-top: 2em;">
+
+    <!-- Footer Links -->
+    <div class="container">
+
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Stress & Anxiety</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Depression</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Learning Disabilities</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Other</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <a href="#!">Contact An Expert</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+        <hr class="rgba-white-light" style="margin: 0 15%;">
+
+        <!-- Grid row-->
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+            <!-- Grid column -->
+            <div class="col-md-8 col-12 mt-5">
+                <p style="line-height: 1.7rem">PhotoLink is a company that connects photographers with people
+                    in need of photography. Currently there is no one stop shop for people to find
+                    photographers for their long lasting memories. This why our founders: Bal, Jihyo, and Josh
+                    decided to make PhotoLink.</p>
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+        <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+        <!-- Grid row-->
+        <div class="row pb-3">
+
+
+        </div>
+        <!-- Grid row-->
+
+    </div>
+    <!-- Footer Links -->
+</footer>
 
 <% include ./partials/footer %>
