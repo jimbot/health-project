@@ -50,6 +50,7 @@ div.ui.primary.menu {
 
 /* LIVE CHAT CSS */
 .chat-popup{
+  background-color: white;
   box-sizing: border-box;
   margin: 0;
   padding: 13px;
@@ -62,6 +63,7 @@ div.ui.primary.menu {
 .members-list,
 .messages {
   border: 1px solid #e4e4e4;
+  border-radius: 5px;
   padding: 15px;
   margin-bottom: 15px;
 }
@@ -116,4 +118,3 @@ div.ui.primary.menu {
     right: 2%;
     width: 100px;
     }
->>>>>>> 7a683bb9ee9862aa96b62b00cae04d4797d44504

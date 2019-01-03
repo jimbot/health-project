@@ -18,8 +18,9 @@
       <div class="left menu">
         <div class="ui secondary menu">
           <a class="item" href="/">
-            <img class="ui small image" src="/uplift.png" style="width:55px">
+            <img class="ui small image" src="/uplift.png" style="width:65px; margin:0;padding:0;">
           </a>
+          <a class="ui item pink label" href="/" style="left:-12px; font-size:0.7em;">BCIT</a>
         </div>
       </div>
 
@@ -33,7 +34,7 @@
             <i class="edit icon" style="font-size:1em;"></i>Post
           </a>
           <a class="ui item" href="/contact">
-            <i class="users icon" style="font-size:1em;"></i>Counsellors
+            <i class="envelope icon" style="font-size:1.2em;"></i>Messages
           </a>
           <a class="ui item" href="#">
             <img class="ui right spaced avatar image" src="<%=currentUser.profilePicture%>">
@@ -47,17 +48,23 @@
     </div>
   </div>
 
+  <!-- Page Heading -->
+  <h1 class="ui big header" style="font-size:2.5em; padding: 20px 0 15px 0">
+    <%=category.title%>
+    <p style="font-size:0.4em; padding-top:10px;">Other peer experiences</p>
+  </h1>
 
-<h1 class="ui header"><%=category.title%></h1>
 
 <% category.posts.reverse().forEach(function(post){ %>
-  <div class="ui card container">
+  <div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
     <div class="content">
       <div class="header">
         <a class="ui header" href="/show/<%=post._id%>">
           <%=post.title%>
         </a>
       </div>
+      <!-- FOR IMAGE -->
+      <img class="ui large image" src="<%=post.image%>">
       <div class="description">
         <p><%=post.body%></p>
       </div>
@@ -94,15 +101,15 @@
     <div class="members-list" style="size:5">-</div>
     <div class="messages" style="size:5"></div>
     <form class="message-form" onsubmit="return false;">
-        <input class="message-form__input" placeholder="Type a message.." type="text"/>
-        <input class="ui small button message-form__button" value="Send" type="submit"/>
+        <input class="message-form__input" placeholder="Type your message.." type="text"/>
+        <input class="ui small pink button message-form__button" value="Send" type="submit"/>
     </form>
 </div>
 </div>
 <div>
 
-<button class="ui small primary button open-button" onclick="openForm()">Show Chat</button>
-<button class="ui small primary button close-button" onclick="closeForm()">Hide Chat</button>
+<button class="ui small button open-button" onclick="openForm()">Show Chat</button>
+<button class="ui small button close-button" onclick="closeForm()">Hide Chat</button>
 </div>
 
 <% include ./partials/footer %>

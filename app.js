@@ -65,6 +65,7 @@ var Category = mongoose.model("Category", categorySchema);
 var postSchema = new mongoose.Schema({
   title: String,
   body: String,
+  image: String,
   created: {
     type: Date, default: Date.now
   },
