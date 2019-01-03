@@ -1,4 +1,15 @@
-const CLIENT_ID = '9HUgvS4sb8arsXxc';
+// const CLIENT_ID = '9HUgvS4sb8arsXxc';
+
+var CLIENT_ID;
+var chatIDarr = ['voCS4BwquXZm2xcv', '9HUgvS4sb8arsXxc', 'X9dxLSgS44YK86kW', 'P7LtfYuKJhpcvZFw', 'eEyJPvLBByOfY3JW', 'hFOhKc45zj2wHcm2', 'EzMoCzftV3UBsrA8', 's2MBc4uQtn5tVW9T'];
+if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d75709499b3327fc351f7')
+{
+ CLIENT_ID = chatIDarr[0];
+}
+else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d773148e2ad32b90f2509')
+{
+ CLIENT_ID = chatIDarr[1];
+}
 
 const drone = new ScaleDrone(CLIENT_ID, {
     data: { // Will be sent out as clientData via events
