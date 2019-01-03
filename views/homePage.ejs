@@ -11,7 +11,7 @@
     <% categories.forEach(function(category){ %>
       <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
           <div style="position:relative;">
-              <a><img class="card-img-top" src="<%=category.image%>"></a>
+              <a href="/home/<%=category._id%>"><img class="card-img-top" src="<%=category.image%>"></a>
               <div class="card-body">
                   <h4 style="position: absolute; top: 70%;" class="card-title">
                       <a href="/home/<%=category._id%>" style=" color: white; text-shadow: 2px 2px 4px black; font-size:1.1em"><%=category.title%></a>
