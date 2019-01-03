@@ -32,11 +32,11 @@
           <a class="ui item" href="/<%=category._id%>/new">
             <i class="edit icon" style="font-size:1em;"></i>Post
           </a>
-          <a class="ui item" href="/projects/new">
+          <a class="ui item" href="/contact">
             <i class="users icon" style="font-size:1em;"></i>Counsellors
           </a>
           <a class="ui item" href="#">
-            <%= currentUser.firstName %></a>
+            <%= currentUser.username %></a>
           <a class="ui item" href="/logout">Logout</a>
           <% } %>
         </div>
@@ -92,14 +92,14 @@
     <div class="messages" style="size:5"></div>
     <form class="message-form" onsubmit="return false;">
         <input class="message-form__input" placeholder="Type a message.." type="text"/>
-        <input class="message-form__button" value="Send" type="submit"/>
+        <input class="ui small button message-form__button" value="Send" type="submit"/>
     </form>
 </div>
 </div>
 <div>
 
-<button class="ui small button open-button" onclick="openForm()">Show Chat</button>
-<button class="ui small button close-button" onclick="closeForm()">Hide Chat</button>
+<button class="ui small primary button open-button" onclick="openForm()">Show Chat</button>
+<button class="ui small primary button close-button" onclick="closeForm()">Hide Chat</button>
 </div>
 
 <% include ./partials/footer %>

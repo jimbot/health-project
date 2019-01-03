@@ -204,6 +204,12 @@ app.get("/login", function(req, res){
   res.render("login");
 });
 
+//logout
+app.get("/logout", function(req, res){
+  req.logout();
+  res.redirect("/");
+});
+
 // login logic
 // middleware
 app.post("/login", passport.authenticate("local", {

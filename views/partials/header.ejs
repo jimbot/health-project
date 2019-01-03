@@ -5,6 +5,7 @@
  <meta charset="utf-8">
  <title>BCIT US</title>
  <link rel="stylesheet" type="text/css" href="/app.css">
+ <link rel="stylesheet" href="/chatbox.css">
  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
  <!-- BOOTSTRAP -->
@@ -34,7 +35,7 @@
            <i class="users icon" style="font-size:1.2em;"></i>Counsellors
          </a>
          <a class="ui item" href="#">
-           <%= currentUser.firstName %></a>
+           <%= currentUser.username %></a>
          <a class="ui item" href="/logout">Logout</a>
          <% } %>
        </div>

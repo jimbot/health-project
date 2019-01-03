@@ -1,0 +1,40 @@
+
+.bubble_right{
+  border: 1px solid transparent;
+  padding: 1em;
+  background-color: #007bff;
+  border-radius: 12px;
+  position: relative;
+}
+
+.bubble_right:before{
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 26px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-left: 26px solid #007bff;
+  border-bottom: 13px solid transparent;
+}
+
+.bubble_left{
+  border: 1px solid transparent;
+  padding: 1em;
+  background-color: #007bff;
+  border-radius: 12px;
+  position: relative;
+}
+
+.bubble_left:before{
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 26px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-right: 26px solid #007bff;
+  border-bottom: 13px solid transparent;
+}

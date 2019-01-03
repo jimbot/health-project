@@ -1,24 +1,68 @@
 <% include ./partials/header %>
 
-<div id="back">
-  <a href="">Back</a>
+<div class="ui card container">
+  <div class="content">
+    <div class="header">
+      Chat with Lauren Oleksewich
+    </div>
 </div>
-<div id="content">
-  <div class="ui card container">
-    <p class="words bubble_right">Hi I'd like to talk to you</p>
-    <p class="authorName">Anonymous</p>
-    <p class="timestamp">3/1/2019</p>
+
+<div class="ui card container" style="box-shadow:none!important">
+
+<div class="content">
+  <div class="ui comments">
+    <div class="comment" id="content">
+      <div class="content">
+        <a class="author">You</a>
+        <div class="metadata">
+          <span class="date">1 hour ago</span>
+        </div>
+        <div class="text">
+          Hi I'd like to talk to you
+        </div>
+      </div>
+      <br/>
+      <div class="content">
+        <a class="author">Lauren</a>
+        <div class="metadata">
+          <span class="date">45 minutes ago</span>
+        </div>
+        <div class="text">
+          Hello! Thanks so much for reaching out to me. I'm here to help. What can I do for you?
+        </div>
+      </div>
+
+      </div>
+    </div>
   </div>
-  <div class="msg">
-    <p class="words bubble_left">Hello! Thanks so much for reaching out to me. I'm here to help. What can I do for you?</p>
-    <p class="authorName">Health Counsellor</p>
-    <p class="timestamp">3/1/2019</p>
+
+  <div class="content">
+    <form id="msg_input">
+      <div class="field">
+        <textarea id="submit_text" placeholder="Reach out!" rows="2" style="width: 100%;resize: none;padding:5px;border-radius:7px"></textarea>
+      </div>
+      <button class="ui blue submit button" id="enter_button">Enter</button>
+    </form>
   </div>
+
 </div>
-<form id="msg_input">
-  <textarea id="submit_text"></textarea>
-  <button id="enter_button">Enter</button>
-</form>
+
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+  $("#enter_button").click(function(event){
+    event.preventDefault();
+    var submission = $("#submit_text").val()
+    if(!submission == "" || !("#submit_text").val() == "Text goes here") {
+      var today = new Date();
+      var newItem = $("<br/><div class='content'><a class='author'>You</a><div class='metadata'><span class='date'>Just now</span></div><div class='text'>" + submission + "</div></div>");
+      $("#content").append(newItem);
+      $("#submit_text").val("");
+    }
+  });
+</script>
 
 
 <% include ./partials/footer %>

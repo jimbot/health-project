@@ -1,19 +1,5 @@
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript">
-  $("#enter_button").click(function(event){
-    event.preventDefault();
-    var submission = $("#submit_text").val()
-    if(!submission == "" || !("#submit_text").val() == "Text goes here") {
-      var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth() + 1;
-      var yy = today.getFullYear();
-      var newItem = $("<div><p class='words bubble_right'>" + submission + "</p><p class='authorName'>" + "Anonymous " + "</p><p class='timestamp'>" + dd + "/" + mm + "/" +  yy + "</p></div>").addClass("msg");
-      $("#content").append(newItem);
-      $("#submit_text").val("");
-    }
-  });
-</script>
+
+
   <script type='text/javascript' src="/script.js"></script>
   <script>
       function openForm() {
