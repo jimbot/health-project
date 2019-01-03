@@ -24,6 +24,25 @@ div.ui.primary.menu {
   padding: 10px;
 }
 
+/* GRID SYSTEM FOR HOME PAGE */
+  @media (min-width: 992px) {
+    body {
+      padding-top: 56px;
+    }
+  }
+
+  .portfolio-item {
+    margin-bottom: 75px;
+    height: 200px;
+    width: 300px;
+  }
+
+  .card-img-top {
+      height: 250px;
+      width: 250px;
+  }
+
+
 /* LIVE CHAT CSS */
 .chat-popup{
   box-sizing: border-box;
@@ -31,7 +50,7 @@ div.ui.primary.menu {
   padding: 13px;
   display: flex;
   flex-direction: column;
-  max-height: 85vh;
+  max-height: 70vh;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .members-count,
@@ -73,7 +92,7 @@ div.ui.primary.menu {
 .chat-popup {
     visibility: visible;
     position: fixed;
-    top: 0;
+    top: 10%;
     right: 15px;
     border: 3px solid #f1f1f1;
     z-index: 9;
