@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-  <meta charset="utf-8">
   <title>BCIT US</title>
   <link rel="stylesheet" type="text/css" href="/app.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
 </head>
 
 
@@ -80,5 +81,23 @@
 
   </div>
 <% }) %>
+
+<!-- CHAT -->
+<div>
+<div class="chat-popup" id="myForm">
+    <div class="members-count">-</div>
+    <div class="members-list" style="size:5">-</div>
+    <div class="messages" style="size:5"></div>
+    <form class="message-form" onsubmit="return false;">
+        <input class="message-form__input" placeholder="Type a message.." type="text"/>
+        <input class="message-form__button" value="Send" type="submit"/>
+    </form>
+</div>
+</div>
+<div>
+
+<button class="open-button" onclick="openForm()">Show Chat</button>
+<button class="close-button" onclick="closeForm()">Hide Chat</button>
+</div>
 
 <% include ./partials/footer %>
