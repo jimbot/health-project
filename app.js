@@ -245,10 +245,15 @@ app.post("/show/:id", function(req, res){
   });
 });
 
-// DM
-app.get("/dm", function(req, res){
-  res.render("dm");
+// CONTACT COUNSELLORS
+app.get("/contact", function(req, res){
+  res.render("contact");
 });
+
+// CHAT LINK
+app.get("/chat", function(req, res){
+  res.render("chatbox")
+})
 
 // LISTENERS
 // HEROKU

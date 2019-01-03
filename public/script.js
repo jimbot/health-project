@@ -1,4 +1,4 @@
-const CLIENT_ID = 'voCS4BwquXZm2xcv';
+const CLIENT_ID = '9HUgvS4sb8arsXxc';
 
 const drone = new ScaleDrone(CLIENT_ID, {
     data: { // Will be sent out as clientData via events
