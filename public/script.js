@@ -6,11 +6,36 @@ if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c
 {
  CLIENT_ID = chatIDarr[0];
 }
-else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d773148e2ad32b90f2509')
+else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d776148e2ad32b90f250a')
 {
  CLIENT_ID = chatIDarr[1];
-} else {
-  CLIENT_ID = chatIDarr[2];
+}
+else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d780b48e2ad32b90f250b')
+{
+ CLIENT_ID = chatIDarr[2];
+}
+else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d790848e2ad32b90f250d')
+{
+ CLIENT_ID = chatIDarr[3];
+}
+else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d793048e2ad32b90f250e')
+{
+ CLIENT_ID = chatIDarr[4];
+}
+else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d784a48e2ad32b90f250c')
+{
+ CLIENT_ID = chatIDarr[5];
+}
+else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d7afb690e4b32e2f65c44')
+{
+ CLIENT_ID = chatIDarr[6];
+}
+else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d773148e2ad32b90f2509')
+{
+ CLIENT_ID = chatIDarr[7];
+}
+else{
+ CLIENT_ID = 'ZdkmiM2bOWLgGEer';
 }
 
 const drone = new ScaleDrone(CLIENT_ID, {
