@@ -9,6 +9,8 @@ if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c
 else if(window.location.href == 'https://shrouded-thicket-53002.herokuapp.com/home/5c2d773148e2ad32b90f2509')
 {
  CLIENT_ID = chatIDarr[1];
+} else {
+  CLIENT_ID = chatIDarr[2];
 }
 
 const drone = new ScaleDrone(CLIENT_ID, {
