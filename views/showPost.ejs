@@ -69,9 +69,16 @@
       <!-- The dicsussion text field -->
       <div class="content">
         <form action="/show/<%=post._id%>" method="POST" class="ui form">
-          <div class="field">
-            <textarea type="text" name="comment[text]" placeholder="Join the discussion" rows="2" style="resize: none;" required></textarea>
-          </div>
+          <% if(!currentUser){ %>
+            <div class="field">
+              <textarea type="text" name="comment[text]" placeholder="Please sign in or log on to join the discussion" rows="2" style="resize: none;" disabled></textarea>
+            </div>
+          <% } else { %>
+            <div class="field">
+              <textarea type="text" name="comment[text]" placeholder="Join the discussion" rows="2" style="resize: none;" required></textarea>
+            </div>
+          <% } %>
+
           <button class="ui blue submit button">Post</button>
         </form>
       </div>
