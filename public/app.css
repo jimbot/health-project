@@ -19,3 +19,7 @@ div.ui.primary.menu {
   margin-bottom: 30px;
   padding: 10px;
 }
+
+img.logo_img {
+  float: left;
+}
