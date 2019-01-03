@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="field">
-        <input type="email" name="lastname" placeholder="email@my.bcit.ca" pattern="(.+)(@my\.bcit\.ca|@my\.bcit\)" required>
+        <input type="email" name="lastname" placeholder="email@my.bcit.ca" pattern="(.+)(@my\.bcit\.ca|@my\.bcit\)" oninvalid="this.setCustomValidity('Please use an @bcit.ca email.')" oninput="this.setCustomValidity('')" required>
       </div>
       <div class="field">
         <input type="password" name="password" placeholder="Password" min="6" required>
