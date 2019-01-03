@@ -35,11 +35,17 @@ div.ui.primary.menu {
     margin-bottom: 75px;
     height: 200px;
     width: 300px;
+    margin-bottom: 125px;
   }
 
   .card-img-top {
+      margin-top: 50px;
       height: 250px;
       width: 250px;
+  }
+
+  .page-footer.font-small {
+    margin-top: 100px;
   }
 
 
