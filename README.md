@@ -11,7 +11,7 @@ github repo: https://github.com/jimbot/uplift
 ## Authors
 
 * **James Chen** - [jimbot](https://github.com/jimbot)
-* **Mike Vu** -
+* **Mike Vu** - [mikevu23](htts://github.com/mikevu23)
 * **Kyle Browne** - 
 * **Angus Lin** - [AngoosHub](http://github.com/AngoosHub)
 * **Bal Parmar** - [balparmar](https://github.com/balparmar)
