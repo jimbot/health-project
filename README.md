@@ -15,7 +15,7 @@ github repo: https://github.com/jimbot/uplift
 * **Kyle Browne** - 
 * **Angus Lin** - 
 * **Bal Parmar** - 
-* **Evano Hirabe** - 
+* **Evano Hirabe** - [Hevano](https://github.com/Hevano)
 
 ## Technicals
 
