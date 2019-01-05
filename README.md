@@ -5,7 +5,7 @@ Uplift is a social app dedicated to starting a conversation around mental health
 
 This web app was created by Group 3 at BCIT's 24 hour, Co-op Hackathon Competition.
 
-website: https://uplift-bcit.herokuapp.com/home
+website: https://uplift-bcit.herokuapp.com
 github repo: https://github.com/jimbot/uplift
 
 ## Authors
