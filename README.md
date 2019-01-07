@@ -12,7 +12,7 @@ github repo: https://github.com/jimbot/uplift
 
 * **James Chen** - [jimbot](https://github.com/jimbot)
 * **Mike Vu** - [mikevu23](https://github.com/mikevu23)
-* **Kyle Browne** - 
+* **Kyle Browne** - [kbrownebcit](https://github.com/kbrownebcit)
 * **Angus Lin** - [AngoosHub](http://github.com/AngoosHub)
 * **Bal Parmar** - [balparmar](https://github.com/balparmar)
 * **Evano Hirabe** - [Hevano](https://github.com/Hevano)
