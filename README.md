@@ -12,6 +12,8 @@ This web app was created by Group 3 at BCIT's 24 hour, Co-op Hackathon Competiti
 
 Uplift follows RESTful routing conventions and implements CRUD to allow users to manage Posts, Updates, and Comments.
 
+Scaledrone was used to provide an anonymous live chat room for users currently on the same Topic page.
+
 **Public Folder** CSS files  
 
 **Views Folder** 
