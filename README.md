@@ -1,8 +1,8 @@
 # Uplift  
 
-Uplift is a social app dedicated to starting a conversation around mental health, powered by a safe and anonymous community for BCIT students.
+Uplift is a social web application dedicated to help start a conversation around mental health.
 
-Uplicat follows RESTful routing conventions and implements CRUD to allow users to manage Posts, Updates, and Comments.
+Uplift is powered by a safe and anonymous community for BCIT students and encourages embracing difficult situations and topics together as a community.
 
 This web app was created by Group 3 at BCIT's 24 hour, Co-op Hackathon Competition.
 
@@ -10,22 +10,18 @@ This web app was created by Group 3 at BCIT's 24 hour, Co-op Hackathon Competiti
 
 ## Technical Specifications
 
+Uplift follows RESTful routing conventions and implements CRUD to allow users to manage Posts, Updates, and Comments.
+
 **Public Folder** CSS files  
 
-**Views Folder** .ejs files that render all web pages  
-
-**Models Folder** 
+**Views Folder** 
+* .ejs files that render all web pages  
 * Mongo Schemas
 * Embedded data
-* Project Schema references Comments Schema and Update Schema
-* User Schema references their own Projects and is referenced by Update, Project, and Comment Schemas
+* Post Schema references Comments Schema and User Schema
+* User Schema references their own Posts and is referenced by the Comment Schema
 
-**Routes Folder** 
-* Handles and renders all user requests
-* Middleware used to check if current User is logged in to determine whether or not they can make POST requests
-* Middleware to check author of current Project before they make a DELETE request
-
-**NPM Packages used**
+**NPM Packages**
 * EJS, express, mongoose, body-parser, moment.js
 * passport.js (for authentication and security)
 
