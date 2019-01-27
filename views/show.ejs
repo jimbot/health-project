@@ -75,7 +75,7 @@
           <img src="<%=post.author.profilePicture%>">
           <%= post.author.username %>
         </a>
-        <a href="">
+        <a href="/show/<%=post._id%>">
           <div class="ui label">
               <i class="comment icon"></i>
               <% if(post.comments.length > 0){ %>
